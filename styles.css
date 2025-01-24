@@ -1,120 +1,80 @@
-/* General Styles */
-body {
+/* Custom styles to enhance Tailwind-like design */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #333;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    padding: 0;
+}
+
+body {
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f9;
+    color: var(--text-color);
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 15px;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+/* Hover and transition effects */
+a, button {
+    transition: all 0.3s ease;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
 }
 
-header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-    display: flex;
-    justify-content: center;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 
-nav ul li {
-    margin: 0 15px;
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
+/* Subtle animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Section Styles */
-.section {
-    padding: 40px 0;
-    text-align: center;
-    background: #fff;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.project-card {
+    animation: fadeIn 0.5s ease-out;
 }
 
-.section:nth-child(even) {
-    background: #f9f9f9;
-}
+/* Print styles */
+@media print {
+    body {
+        font-size: 12px;
+    }
 
-.section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.skills-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.skills-list li {
-    background: #0073e6;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.project {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.project h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.project p {
-    margin: 0;
-}
-
-/* Contact Section */
-#contact a {
-    color: #0073e6;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
+    header, footer {
+        display: none;
+    }
 }
