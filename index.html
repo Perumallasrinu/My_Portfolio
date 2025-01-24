@@ -3,73 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Srinu Perumalla | Portfolio</title>
+    <title>Srinu Perumalla - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Srinu Perumalla</h1>
-            <p>Master’s Student in Computer Engineering | Aspiring AI/ML, VLSI, IoT, Embedded Systems, VLSI Front-End Design & Verification Intern</p>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-600 text-white py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold">Srinu Perumalla</h1>
+                <p class="text-lg">Computer Engineering Master's Student | AI & Hardware Specialist</p>
+            </div>
             <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:text-blue-200">About</a></li>
+                    <li><a href="#projects" class="hover:text-blue-200">Projects</a></li>
+                    <li><a href="#skills" class="hover:text-blue-200">Skills</a></li>
+                    <li><a href="#contact" class="hover:text-blue-200">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am currently pursuing a master’s degree in Computer Engineering at the University of North Texas. With a strong foundation in digital logic design, AI/ML, and VLSI, I aim to contribute to innovative solutions in embedded systems, IoT, and data science. I bring a passion for learning and a commitment to leveraging technology to solve real-world problems.</p>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python, C Programming</li>
-                <li>VLSI (Basic), System Verilog, Digital Logic Design</li>
-                <li>AI/ML, IoT, Embedded Systems</li>
-                <li>Apache Spark, ETL pipeline, MySQL</li>
-                <li>MATLAB, TensorFlow, Keras</li>
-                <li>HTML, CSS, JavaScript</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>DataForge: Advanced ETL Pipeline Framework</h3>
-                <p>Developed an intelligent ETL pipeline framework for business systems, leveraging Python and Apache Spark to optimize data processing.</p>
+    <main class="container mx-auto px-4 py-8">
+        <section id="about" class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+            <div class="flex items-center">
+                <div class="w-1/3 mr-6">
+                    <img src="/api/placeholder/300/300" alt="Srinu Perumalla" class="rounded-full border-4 border-blue-600">
+                </div>
+                <div class="w-2/3">
+                    <p class="mb-4">
+                        I'm a Master's student in Computer Engineering at the University of North Texas with a passion for AI, Machine Learning, and Hardware Design. 
+                        With expertise in Python, VLSI design, and IoT technologies, I've developed innovative solutions in areas like health monitoring, transportation logistics, and smart systems.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/srinu-perumalla/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">LinkedIn</a>
+                        <a href="https://github.com/Perumallasrinu" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">GitHub</a>
+                    </div>
+                </div>
             </div>
-            <div class="project">
-                <h3>Optimized Low-Power VLSI Architecture</h3>
-                <p>Designed a low-power VLSI architecture for ECG/VCG data compression, tailored for IoHT wearable device applications.</p>
+        </section>
+
+        <section id="skills" class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-blue-100 p-4 rounded">
+                    <h3 class="font-bold mb-2">Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C/C++</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-100 p-4 rounded">
+                    <h3 class="font-bold mb-2">AI/ML</h3>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Keras</li>
+                        <li>scikit-learn</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-100 p-4 rounded">
+                    <h3 class="font-bold mb-2">Hardware</h3>
+                    <ul>
+                        <li>VHDL</li>
+                        <li>Verilog</li>
+                        <li>ESP32</li>
+                        <li>Arduino</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:srinu.perumalla@example.com">srinu.perumalla@example.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/srinu-perumalla" target="_blank">linkedin.com/in/srinu-perumalla</a></p>
-        </div>
-    </section>
+        <section id="projects" class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Featured Projects</h2>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-4 rounded">
+                    <h3 class="font-bold text-lg mb-2">SMART WORD PREDICTION</h3>
+                    <p>Developed a next-word prediction model using bidirectional LSTM, achieving 85.2% accuracy for text auto-correction.</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded">
+                    <h3 class="font-bold text-lg mb-2">IoT Smart Home System</h3>
+                    <p>Implemented an IoT architecture with ESP32, integrating sensors for motion, temperature, and gas detection.</p>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Srinu Perumalla. All rights reserved.</p>
-        </div>
+        <section id="contact" class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <p><strong>Email:</strong> srinuperumalla3052@gmail.com</p>
+                    <p><strong>Phone:</strong> +1 940.977.5202</p>
+                    <p><strong>Location:</strong> Denton, TX</p>
+                </div>
+                <form class="flex flex-col space-y-4">
+                    <input type="text" placeholder="Name" class="p-2 border rounded">
+                    <input type="email" placeholder="Email" class="p-2 border rounded">
+                    <textarea placeholder="Message" class="p-2 border rounded h-24"></textarea>
+                    <button class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-800 text-white py-4 text-center">
+        <p>&copy; 2024 Srinu Perumalla. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
