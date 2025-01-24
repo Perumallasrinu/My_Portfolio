@@ -1,80 +1,159 @@
-/* Custom styles to enhance Tailwind-like design */
+/* Dynamic Portfolio Styles */
 :root {
     --primary-color: #2563eb;
-    --secondary-color: #1e40af;
+    --secondary-color: #8b5cf6;
     --text-color: #333;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Noise Overlay Effect */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-body {
-    line-height: 1.6;
-    color: var(--text-color);
+/* Glitch Text Effect */
+.glitch {
+    position: relative;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff;
+    animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+.glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff;
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
 
-/* Hover and transition effects */
-a, button {
+@keyframes glitch-anim {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
+    50% { clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
+    50% { clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+}
+
+/* Navigation Link Hover Effect */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Floating Badge Effect */
+.floating-badges {
+    top: -20px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    animation: float 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Skill Card Animation */
+.skill-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
     transition: all 0.3s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+.skill-progress {
+    height: 5px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 4px;
-}
-
-/* Subtle animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+/* Project Card Hover Effect */
 .project-card {
-    animation: fadeIn 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Print styles */
-@media print {
-    body {
-        font-size: 12px;
-    }
+.project-image-wrapper {
+    position: relative;
+}
 
-    header, footer {
-        display: none;
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Pulsing Button Effect */
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive and Additional Animations */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
     }
 }
