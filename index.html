@@ -6,17 +6,20 @@
     <title>Srinu Perumalla - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-gray-100 font-sans">
     <header class="bg-red-600 text-white py-6">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div>
-                <h1 class="text-3xl font-bold">Srinu Perumalla</h1>
+                <h1 class="text-3xl font-bold">SRINU PERUMALLA</h1>
                 <p class="text-lg">Computer Engineering Master's Student | AI & Hardware Specialist</p>
             </div>
             <nav>
                 <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:text-red-200">Home</a></li>
                     <li><a href="#about" class="hover:text-red-200">About</a></li>
+                    <li><a href="#Education" class="hover:text-red-200">Education</a></li>
                     <li><a href="#projects" class="hover:text-red-200">Projects</a></li>
                     <li><a href="#skills" class="hover:text-red-200">Skills</a></li>
                     <li><a href="#resume" class="hover:text-red-200">Resume</a></li>
@@ -27,6 +30,15 @@
     </header>
 
     <main class="container mx-auto px-4 py-8">
+        <!-- Home Section -->
+        <section id="home" class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Welcome to My Portfolio</h2>
+            <p class="text-lg">
+                Hi, I'm Srinu Perumalla, a passionate Computer Engineering master's student specializing in AI, IoT, and hardware design. Explore my portfolio to learn more about my projects, skills, and professional journey.
+            </p>
+        </section>
+
+        <!-- About Section -->
         <section id="about" class="bg-white shadow-md rounded-lg p-6 mb-8">
             <h2 class="text-2xl font-semibold mb-4">About Me</h2>
             <div class="flex items-center">
@@ -39,13 +51,18 @@
                         With expertise in Python, VLSI design, and IoT technologies, I've developed innovative solutions in areas like health monitoring, transportation logistics, and smart systems.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="https://linkedin.com/in/srinu-perumalla/" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">LinkedIn</a>
-                        <a href="https://github.com/Perumallasrinu" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">GitHub</a>
+                        <a href="https://linkedin.com/in/srinu-perumalla/" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 flex items-center">
+                            <i data-lucide="linkedin" class="mr-2"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/Perumallasrinu" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 flex items-center">
+                            <i data-lucide="github" class="mr-2"></i> GitHub
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="bg-white shadow-md rounded-lg p-6 mb-8">
             <h2 class="text-2xl font-semibold mb-4">Skills</h2>
             <div class="grid grid-cols-3 gap-4">
@@ -78,6 +95,7 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="bg-white shadow-md rounded-lg p-6 mb-8">
             <h2 class="text-2xl font-semibold mb-4">Featured Projects</h2>
             <div class="grid grid-cols-2 gap-6">
@@ -92,12 +110,14 @@
             </div>
         </section>
 
+        <!-- Resume Section -->
         <section id="resume" class="bg-white shadow-md rounded-lg p-6 mb-8">
             <h2 class="text-2xl font-semibold mb-4">Resume</h2>
             <p>Download my resume to learn more about my academic and professional journey:</p>
             <a href="/resume.pdf" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Download Resume</a>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
             <div class="grid grid-cols-2 gap-4">
@@ -117,7 +137,11 @@
     </main>
 
     <footer class="bg-red-800 text-white py-4 text-center">
-        <p>&copy; 2024 Srinu Perumalla. All Rights Reserved.</p>
+        <p>&copy; 2025 Srinu Perumalla. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
